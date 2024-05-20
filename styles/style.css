@@ -1,3 +1,24 @@
+/* XS */
+/* @media (min-width: 475px) {} */
+
+/* SM*/
+/* @media (min-width: 640px) {} */
+
+/* MD */
+/* @media (min-width: 768px) {} */
+
+/* LG */
+/* @media (min-width: 1024px) {} */
+
+/* XL */
+/* @media (min-width: 1280px) {} */
+
+/* 2XL */
+/* @media (min-width: 1536px) {} */
+
+
+
+
 :root {
     --clr-dark: #070a13;
     --clr-light: #f1f5f9;
