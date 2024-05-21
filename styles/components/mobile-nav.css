@@ -1,4 +1,4 @@
-.mobile-nav{
+.mobile-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-.mobile-nav__menu{
+.mobile-nav__menu {
     list-style: none;
     padding: 0;
     display: flex;
@@ -31,11 +31,11 @@
     transition: color 0.3s;
 }
 
-.mobile-nav__link:hover{
+.mobile-nav__link:hover {
     color: var(--clr-rose);
 }
 
-.mobile-nav__link-line{
+.mobile-nav__link-line {
     border: 1px solid var(--clr-slate800);
     padding-right: 1.5em;
 }
@@ -47,6 +47,6 @@
     color: var(--clr-slate600);
 }
 
-.mobile-nav__btn{
+.mobile-nav__btn {
     font-size: var(--size-sm);
 }
