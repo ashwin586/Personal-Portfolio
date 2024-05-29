@@ -29,8 +29,8 @@
 
 .about__technologies {
     display: grid;
-    grid-template-rows: repeat(auto-fit, 100px);
-    grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(2, 100px);
     gap: 1rem;
 }
 
