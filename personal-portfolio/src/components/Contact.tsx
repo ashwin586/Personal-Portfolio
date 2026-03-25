@@ -23,7 +23,7 @@ export default function Contact() {
 
   return (
     <section className="section" id="contact">
-      <div className="w-full max-w-2xl flex flex-col gap-8">
+      <div className="w-full max-w-2xl flex flex-col gap-5 md:gap-8">
         {/* section label */}
         <div className="flex items-center gap-2">
           <div className="w-6 h-px bg-(--color-indigo)" />
@@ -36,8 +36,8 @@ export default function Contact() {
         </div>
 
         {/* heading */}
-        <div className="flex flex-col gap-3">
-          <h2 className="text-4xl font-bold tracking-tight text-white leading-tight">
+        <div className="flex flex-col gap-2 md:gap-3">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
             Let&apos;s build
             <br />
             <span
@@ -61,17 +61,17 @@ export default function Contact() {
 
         {/* main contact card */}
         <div
-          className="rounded-2xl flex flex-col gap-5 p-6"
+          className="rounded-2xl flex flex-col gap-4 md:gap-5 p-4 md:p-6"
           style={{
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
           {/* availability status */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
             <div className="flex items-center gap-3">
               <div
-                className="w-2.5 h-2.5 rounded-full"
+                className="w-2.5 h-2.5 rounded-full shrink-0"
                 style={{
                   background: "var(--color-teal)",
                   boxShadow: "0 0 0 3px rgba(78,205,196,0.15)",
@@ -88,7 +88,7 @@ export default function Contact() {
 
             {/* timezone */}
             <div
-              className="flex items-center gap-2 text-[11px] font-mono px-3 py-1 rounded-full"
+              className="flex items-center gap-2 text-[11px] font-mono px-3 py-1 rounded-full w-fit"
               style={{
                 color: "rgba(255,255,255,0.3)",
                 background: "rgba(255,255,255,0.04)",
@@ -96,7 +96,8 @@ export default function Contact() {
               }}
             >
               <span>📍</span>
-              <span>Kannur, Kerala, India</span>
+              <span className="md:hidden">Kannur, Kerala, India</span>
+              <span className="hidden md:inline">Kannur, Kerala, India</span>
               <span
                 style={{
                   width: "1px",
@@ -115,8 +116,8 @@ export default function Contact() {
           />
 
           {/* email row */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-col gap-1 min-w-0">
               <span
                 className="text-[10px] font-mono tracking-widest uppercase"
                 style={{ color: "rgba(255,255,255,0.25)" }}
@@ -124,7 +125,7 @@ export default function Contact() {
                 Email
               </span>
               <span
-                className="text-sm font-mono"
+                className="text-xs md:text-sm font-mono"
                 style={{ color: "rgba(255,255,255,0.7)" }}
               >
                 {contact.email}
@@ -133,7 +134,7 @@ export default function Contact() {
 
             <button
               onClick={copyEmail}
-              className="flex items-center gap-2 text-[12px] font-mono px-4 py-2 rounded-lg border transition-all duration-200 cursor-pointer shrink-0"
+              className="flex items-center gap-2 text-[12px] font-mono px-3 md:px-4 py-2 rounded-lg border transition-all duration-200 cursor-pointer shrink-0"
               style={{
                 background: copied
                   ? "rgba(78,205,196,0.1)"
@@ -142,6 +143,28 @@ export default function Contact() {
                   ? "rgba(78,205,196,0.3)"
                   : "rgba(255,255,255,0.1)",
                 color: copied ? "var(--color-teal)" : "rgba(255,255,255,0.4)",
+              }}
+              onMouseEnter={(e) => {
+                if (!copied) {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(135deg, #6f6af8, #4ecdc4)";
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "#6f6af8";
+                  (e.currentTarget as HTMLElement).style.color = "#fff";
+                  (e.currentTarget as HTMLElement).style.boxShadow =
+                    "0 0 12px rgba(111,106,248,0.5), 0 0 24px rgba(111,106,248,0.2)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!copied) {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "rgba(255,255,255,0.03)";
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "rgba(255,255,255,0.1)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "rgba(255,255,255,0.4)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                }
               }}
             >
               {copied ? "✓ copied" : "copy"}
@@ -154,13 +177,13 @@ export default function Contact() {
           />
 
           {/* links row — github, linkedin, resume */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-2 md:gap-3">
             {/* GitHub */}
             <a
               href={contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 py-4 rounded-xl border transition-all duration-200 group"
+              className="flex flex-col items-center gap-1.5 md:gap-2 py-3 md:py-4 rounded-xl border transition-all duration-200 group"
               style={{
                 background: "rgba(255,255,255,0.02)",
                 borderColor: "rgba(255,255,255,0.07)",
@@ -180,8 +203,8 @@ export default function Contact() {
             >
               {/* github svg icon */}
               <svg
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 style={{ color: "rgba(255,255,255,0.6)" }}
@@ -210,7 +233,7 @@ export default function Contact() {
               href={contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 py-4 rounded-xl border transition-all duration-200"
+              className="flex flex-col items-center gap-1.5 md:gap-2 py-3 md:py-4 rounded-xl border transition-all duration-200"
               style={{
                 background: "rgba(255,255,255,0.02)",
                 borderColor: "rgba(255,255,255,0.07)",
@@ -230,8 +253,8 @@ export default function Contact() {
             >
               {/* linkedin svg icon */}
               <svg
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 style={{ color: "rgba(255,255,255,0.6)" }}
@@ -261,7 +284,7 @@ export default function Contact() {
               href={contact.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 py-4 rounded-xl border transition-all duration-200"
+              className="flex flex-col items-center gap-1.5 md:gap-2 py-3 md:py-4 rounded-xl border transition-all duration-200"
               style={{
                 background: "rgba(255,255,255,0.02)",
                 borderColor: "rgba(255,255,255,0.07)",
@@ -281,8 +304,8 @@ export default function Contact() {
             >
               {/* resume icon */}
               <svg
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 style={{ color: "rgba(255,255,255,0.6)" }}

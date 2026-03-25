@@ -75,6 +75,7 @@ html {
 
 .sections-wrapper {
   height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
@@ -86,6 +87,7 @@ html {
 
 .section {
   height: 100vh;
+  height: 100dvh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -102,5 +104,11 @@ html {
 
   50% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 20px 20px;
   }
 }

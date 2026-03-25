@@ -61,7 +61,7 @@ export default function Home() {
       </div>
 
       <div
-        className="fixed bottom-5 left-10 z-50 flex items-center gap-3"
+        className="hidden fixed bottom-5 left-10 z-50 md:flex items-center gap-3"
         style={{
           color: "rgba(255,255,255,0.25)",
           fontSize: "11px",

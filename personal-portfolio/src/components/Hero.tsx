@@ -116,18 +116,10 @@ export default function Hero() {
 
   return (
     <section className="section">
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "640px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "24px",
-        }}
-      >
+      <div className="w-full max-w-2xl flex flex-col gap-5 md:gap-6">
         <div>
           {/* Job Tag Line */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-3 md:gap-4 mb-8">
             <div
               style={{
                 width: "24px",
@@ -149,7 +141,7 @@ export default function Hero() {
           </div>
 
           {/* name */}
-          <h1 className="text-5xl font-bold leading-tight tracking-tight text-white mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white mb-2">
             Hi, I&apos;m
             <br />
             <span
@@ -165,7 +157,7 @@ export default function Hero() {
 
           {/* subtitle */}
           <p
-            className="text-[15px] mb-7 leading-relaxed"
+            className="text-sm md:text-[15px] mb-7 leading-relaxed"
             style={{
               color: "var(--color-text-muted)",
             }}
@@ -198,19 +190,19 @@ export default function Hero() {
           {/* terminal body */}
           <div
             ref={terminalRef}
-            className="p-4 font-mono text-xs leading-relaxed min-h-[140px]"
+            className="p-3 md:p-4 font-mono text-[11px] md:text-xs leading-relaxed min-h-[120px] md:min-h-[140px]"
           />
         </div>
         {/* CTA buttons */}
         <div className="flex gap-3">
           <button
-            className="px-6 py-2.5 rounded-lg text-sm font-medium text-white cursor-pointer transition-opacity hover:opacity-85"
+            className="flex-1 md:flex-none px-5 md:px-6 py-2.5 rounded-lg text-sm font-medium text-white cursor-pointer transition-opacity hover:opacity-85"
             style={{ background: "var(--color-indigo)" }}
           >
             View my work
           </button>
           <button
-            className="px-6 py-2.5 rounded-lg text-sm cursor-pointer transition-all hover:border-white/30 hover:text-white"
+            className="flex-1 md:flex-none px-5 md:px-6 py-2.5 rounded-lg text-sm cursor-pointer transition-all hover:border-white/30 hover:text-white"
             style={{
               background: "transparent",
               border: "1px solid rgba(255,255,255,0.12)",

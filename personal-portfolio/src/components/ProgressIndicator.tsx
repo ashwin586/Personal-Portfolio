@@ -9,7 +9,7 @@ interface Props {
 
 export default function ProgressIndicator({ current, scrollTo }: Props) {
     return (
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-2">
+      <div className="hidden fixed right-6 top-1/2 -translate-y-1/2 z-50 md:flex flex-col items-center gap-2">
         {sections.map((_, i) => (
           <button
             key={i}

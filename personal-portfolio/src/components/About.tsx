@@ -1,120 +1,3 @@
-// "use client";
-
-// export default function About() {
-//   const skills = {
-//     Frontend: ["React", "Redux", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
-//     Backend: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"],
-//     Tools: ["AWS", "Git", "GitHub", "REST APIs"],
-//   };
-
-//   const pillColors: Record<
-//     string,
-//     { bg: string; border: string; text: string }
-//   > = {
-//     Frontend: {
-//       bg: "rgba(111, 106, 248, 0.08)",
-//       border: "rgba(111, 106, 248, 0.25)",
-//       text: "#9d9af8",
-//     },
-//     Backend: {
-//       bg: "rgba(78, 205, 196, 0.08)",
-//       border: "rgba(78, 205, 196, 0.25)",
-//       text: "#4ecdc4",
-//     },
-//     Tools: {
-//       bg: "rgba(247, 201, 72, 0.08)",
-//       border: "rgba(247, 201, 72, 0.25)",
-//       text: "#f7c948",
-//     },
-//   };
-
-//   return (
-//     <section className="section" id="about">
-//       <div className="w-full max-w-4xl grid grid-cols-2 gap-16 items-center">
-//         {/* LEFT — bio */}
-//         <div className="flex flex-col gap-6">
-//           {/* section label */}
-//           <div className="flex items-center gap-2">
-//             <div className="w-6 h-px bg-(--color-indigo)`" />
-//             <span
-//               className="text-[11px] tracking-widest uppercase font-mono"
-//               style={{ color: "var(--color-indigo)" }}
-//             >
-//               About me
-//             </span>
-//           </div>
-
-//           {/* heading */}
-//           <h2 className="text-4xl font-bold tracking-tight text-white leading-tight">
-//             Passionate about
-//             <br />
-//             <span
-//               style={{
-//                 background: "linear-gradient(135deg, #6f6af8, #4ecdc4)",
-//                 WebkitBackgroundClip: "text",
-//                 WebkitTextFillColor: "transparent",
-//               }}
-//             >
-//               building things
-//             </span>
-//           </h2>
-
-//           {/* bio */}
-//           <p
-//             className="text-sm leading-loose"
-//             style={{ color: "var(--color-text-muted)" }}
-//           >
-//             I&apos;m a MERN stack developer with over a year of hands-on project
-//             experience. Even without corporate experience yet, I&apos;ve built
-//             real-world applications end to end — from designing clean React
-//             interfaces to setting up reliable Node backends.
-//           </p>
-
-//           <p
-//             className="text-sm leading-loose"
-//             style={{ color: "var(--color-text-muted)" }}
-//           >
-//             I enjoy every part of the development process and I&apos;m always
-//             looking to improve, collaborate, and ship quality work.
-//           </p>
-//         </div>
-
-//         {/* RIGHT — skills */}
-//         <div className="flex flex-col gap-6">
-//           {Object.entries(skills).map(([group, items]) => (
-//             <div key={group}>
-//               {/* group label */}
-//               <p
-//                 className="text-[10px] tracking-widest uppercase mb-3 font-mono"
-//                 style={{ color: "rgba(255,255,255,0.25)" }}
-//               >
-//                 {group}
-//               </p>
-
-//               {/* pills */}
-//               <div className="flex flex-wrap gap-2">
-//                 {items.map((skill) => (
-//                   <span
-//                     key={skill}
-//                     className="text-[11px] px-3 py-1 rounded-full font-mono border"
-//                     style={{
-//                       background: pillColors[group].bg,
-//                       borderColor: pillColors[group].border,
-//                       color: pillColors[group].text,
-//                     }}
-//                   >
-//                     {skill}
-//                   </span>
-//                 ))}
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -221,11 +104,11 @@ export default function About() {
 
   return (
     <section className="section" id="about">
-      <div className="w-full max-w-4xl grid grid-cols-2 gap-16 items-center">
+      <div className="w-full max-w-4xl flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center py-2">
         {/* LEFT — bio */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 md:gap-6">
           {/* section label */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3 md:gap-4 mb-8">
             <div className="w-6 h-px bg-(--color-indigo)" />
             <span
               className="text-[11px] tracking-widest uppercase font-mono"
@@ -236,7 +119,7 @@ export default function About() {
           </div>
 
           {/* heading */}
-          <h2 className="text-4xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
             Passionate about
             <br />
             <span
@@ -250,23 +133,25 @@ export default function About() {
             </span>
           </h2>
 
-          {/* bio */}
+          {/* bio - only one paragraph on mobile */}
           <p
             className="text-sm leading-loose"
             style={{ color: "var(--color-text-muted)" }}
           >
-            I&apos;m a MERN stack developer with over a year of hands-on project
-            experience. Even without corporate experience yet, I&apos;ve built
-            real-world applications end to end — from designing clean React
-            interfaces to setting up reliable Node backends.
+            Full stack developer with a year of experience building real world
+            applications from crafting clean, responsive interfaces to designing
+            scalable backends and shipping to production. I&apos;ve worked
+            across the entire stack, frontend, backend, and deployment, turning
+            ideas into working products end to end.
           </p>
 
           <p
-            className="text-sm leading-loose"
+            className="hidden md:block text-sm leading-loose"
             style={{ color: "var(--color-text-muted)" }}
           >
-            I enjoy every part of the development process and I&apos;m always
-            looking to improve, collaborate, and ship quality work.
+            I don&apos;t just write code. I think about why it&apos;s being
+            built, who&apos;s going to use it, and how to make sure it actually
+            works in the real world. That&apos;s the part that keeps me hooked.
           </p>
 
           {/* skill group legend */}
@@ -292,9 +177,113 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT — orbit canvas */}
-        <div className="flex items-center justify-center">
+        {/* RIGHT — orbit canvas - Desktop Only */}
+        <div className="hidden md:flex items-center justify-center">
           <canvas ref={canvasRef} style={{ width: "560px", height: "560px" }} />
+        </div>
+
+        {/* Skill pills - mobile only */}
+        <div className="flex flex-wrap md:hidden gap-2">
+          {[
+            {
+              skill: "React",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "Redux",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "Tailwind",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "HTML5",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "CSS3",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "JavaScript",
+              color: "#9d9af8",
+              bg: "rgba(111,106,248,0.08)",
+              border: "rgba(111,106,248,0.25)",
+            },
+            {
+              skill: "Node.js",
+              color: "#4ecdc4",
+              bg: "rgba(78,205,196,0.08)",
+              border: "rgba(78,205,196,0.25)",
+            },
+            {
+              skill: "Express.js",
+              color: "#4ecdc4",
+              bg: "rgba(78,205,196,0.08)",
+              border: "rgba(78,205,196,0.25)",
+            },
+            {
+              skill: "MongoDB",
+              color: "#4ecdc4",
+              bg: "rgba(78,205,196,0.08)",
+              border: "rgba(78,205,196,0.25)",
+            },
+            {
+              skill: "PostgreSQL",
+              color: "#4ecdc4",
+              bg: "rgba(78,205,196,0.08)",
+              border: "rgba(78,205,196,0.25)",
+            },
+            {
+              skill: "Firebase",
+              color: "#4ecdc4",
+              bg: "rgba(78,205,196,0.08)",
+              border: "rgba(78,205,196,0.25)",
+            },
+            {
+              skill: "AWS",
+              color: "#f7c948",
+              bg: "rgba(247,201,72,0.08)",
+              border: "rgba(247,201,72,0.25)",
+            },
+            {
+              skill: "Git",
+              color: "#f7c948",
+              bg: "rgba(247,201,72,0.08)",
+              border: "rgba(247,201,72,0.25)",
+            },
+            {
+              skill: "GitHub",
+              color: "#f7c948",
+              bg: "rgba(247,201,72,0.08)",
+              border: "rgba(247,201,72,0.25)",
+            },
+            {
+              skill: "REST APIs",
+              color: "#f7c948",
+              bg: "rgba(247,201,72,0.08)",
+              border: "rgba(247,201,72,0.25)",
+            },
+          ].map(({ skill, color, bg, border }) => (
+            <span
+              key={skill}
+              className="text-[11px] px-3 py-1 rounded-full font-mono border"
+              style={{ color, background: bg, borderColor: border }}
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </section>
