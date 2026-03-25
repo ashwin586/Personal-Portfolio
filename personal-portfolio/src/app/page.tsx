@@ -5,6 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import DotGrid from "@/components/DotGrid";
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Works from "@/components/Works";
+import Contact from "@/components/Contact";
+import ProgressIndicator from "@/components/ProgressIndicator";
 
 const sections = [
   { id: "hero", label: "home" },
@@ -39,12 +43,21 @@ export default function Home() {
   const total = String(sections.length).padStart(2, "0");
   const label = sections[currentIndex].label;
 
+  const scrollTo = (i: number) => {
+    const sectionEls = document.querySelectorAll(".section");
+    sectionEls[i]?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <main>
       <DotGrid />
-      <NavBar />
+      <NavBar current={currentIndex} scrollTo={scrollTo} />
+      <ProgressIndicator current={currentIndex} scrollTo={scrollTo}/>
       <div className="sections-wrapper">
         <Hero />
+        <About />
+        <Works />
+        <Contact />
       </div>
 
       <div

@@ -7,7 +7,7 @@ export default function Hero() {
     const lines = [
       {
         cmd: "whoami",
-        output: "Ashwin V · Full Stack Developer · Kozhikode, India",
+        output: "Ashwin V · Full Stack Developer · Kannur, Kerala, India",
         color: "var(--color-text-muted)",
       },
       {

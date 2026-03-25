@@ -22,7 +22,13 @@ export default function DotGrid() {
       mouseRef.current.y = e.clientY;
     };
 
+    const handleMouseLeave = () => {
+      mouseRef.current.x = -999;
+      mouseRef.current.y = -999;
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -30,7 +36,7 @@ export default function DotGrid() {
       const spacing = 30;
       const mouse = mouseRef.current;
       const maxRadius = 120;
- 
+
       for (let y = 0; y < canvas.height; y += spacing) {
         for (let x = 0; x < canvas.width; x += spacing) {
           const dx = x - mouse.x;
@@ -57,6 +63,7 @@ export default function DotGrid() {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
