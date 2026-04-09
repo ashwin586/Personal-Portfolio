@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #e8e8f0;
+  --indigo: #6f6af8;
+  --teal: #4ecdc4;
+  --amber: #f7c948;
+  --font-inter: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-text-muted: rgba(255, 255, 255, 0.45);
+  --color-term-prompt: rgba(255, 255, 255, 0.3);
+  --color-term-command: #6f6af8;
+  --color-term-bg: rgba(255, 255, 255, 0.03);
+  --color-term-border: rgba(255, 255, 255, 0.08);
+}
+
+@theme {
+  --color-indigo: #6f6af8;
+  --color-teal: #4ecdc4;
+  --color-amber: #f7c948;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* backgrounds */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-card: rgba(255, 255, 255, 0.03);
+  --color-bg-nav: rgba(10, 10, 15, 0.6);
+
+  /* text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e8e8f0;
+  --color-text-muted: rgba(255, 255, 255, 0.45);
+  --color-text-dim: rgba(255, 255, 255, 0.25);
+
+  /* borders */
+  --color-border-default: rgba(255, 255, 255, 0.07);
+  --color-border-nav: rgba(255, 255, 255, 0.05);
+  --color-border-card: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(111, 106, 248, 0.4);
+
+  /* skill pill variants */
+  --color-pill-indigo-bg: rgba(111, 106, 248, 0.08);
+  --color-pill-indigo-border: rgba(111, 106, 248, 0.25);
+  --color-pill-indigo-text: #9d9af8;
+
+  --color-pill-teal-bg: rgba(78, 205, 196, 0.08);
+  --color-pill-teal-border: rgba(78, 205, 196, 0.25);
+  --color-pill-teal-text: #4ecdc4;
+
+  --color-pill-amber-bg: rgba(247, 201, 72, 0.08);
+  --color-pill-amber-border: rgba(247, 201, 72, 0.25);
+  --color-pill-amber-text: #f7c948;
+
+  /* status badge */
+  --color-status-bg: rgba(78, 205, 196, 0.1);
+  --color-status-border: rgba(78, 205, 196, 0.2);
+  --color-status-dot: #4ecdc4;
+
+  /* terminal */
+  --color-term-bg: rgba(255, 255, 255, 0.03);
+  --color-term-border: rgba(255, 255, 255, 0.08);
+  --color-term-prompt: rgba(255, 255, 255, 0.3);
+  --color-term-command: #6f6af8;
+  --color-term-output: rgba(255, 255, 255, 0.55);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter)
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sections-wrapper {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.sections-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 40px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 20px 20px;
+  }
+}
