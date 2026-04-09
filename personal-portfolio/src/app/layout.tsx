@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        style={{ fontFamily: "var(--font-inter), sans-serif" }}
+        suppressHydrationWarning
       >
         {children}
       </body>

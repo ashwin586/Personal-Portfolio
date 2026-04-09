@@ -20,6 +20,9 @@
   --color-teal: #4ecdc4;
   --color-amber: #f7c948;
 
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
   /* backgrounds */
   --color-bg-primary: #0a0a0f;
   --color-bg-card: rgba(255, 255, 255, 0.03);
